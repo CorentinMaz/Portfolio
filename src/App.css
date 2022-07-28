@@ -158,6 +158,7 @@ span.navbar-text {
   font-size: 18px;
   margin-left: 18px;
 	position: relative;
+  border-radius: 10px;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
 }
@@ -170,6 +171,7 @@ span.navbar-text {
   height: 100%;
   position: absolute;
   background-color: #fff;
+  border-radius: 10px;
   left: 0;
   top: 0;
   z-index: -1;
@@ -177,12 +179,16 @@ span.navbar-text {
 }
 .navbar-text button:hover {
   color: #121212;
+  border-radius: 10px;
+
 }
 .navbar-text button:hover::before {
 	content: "";
 	width: 100%;
 	height: 100%;
 	position: absolute;
+  border-radius: 10px;
+
 }
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
@@ -514,6 +520,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 25px;
   border-radius: 0;
   position: relative;
+  border-radius: 10px;
   transition: 0.3s ease-in-out;
 }
 .contact form button span {
@@ -524,6 +531,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #fff;
 }
 .contact form button::before {
+  border-radius: 10px;
   content: "";
   background: #121212;
   width: 0;
