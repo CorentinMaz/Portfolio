@@ -1,65 +1,49 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import colorSharp from "../assets/img/color-sharp.png"
+import { Container, Row, Col } from "react-bootstrap";
+import { useLanguage } from "../i18n";
 
 export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
 
-  return (
-    <section className="skill" id="skills">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <br></br>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            {/* 90% */}
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>React Native</h5>
+  const { t } = useLanguage();
+
+  const skills = [
+    { name: "React.js", proficiency: "90%" },
+    { name: "TypeScript", proficiency: "90%" },
+    { name: "JavaScript", proficiency: "95%" },
+    { name: "React Native", proficiency: "85%" },
+    { name: "Node.js", proficiency: "85%" },
+    { name: "PHP 8 - Symfony", proficiency: "80%" },
+    { name: "Java 8 - Spring Boot", proficiency: "80%" },
+    { name: "SvelteKit", proficiency: "75%" },
+    { name: "Tailwind CSS/Bootstrap", proficiency: "90%" },
+    { name: "Git / Gitlab / Jira", proficiency: "85%" },
+  ];
+
+    return (
+        <section className="skill" id="skills">
+            <Container fluid="xl">
+                <Row className="skill-cards">
+                    <Col xs={12} data-aos="fade-up" data-aos-delay="180">
+                        <div className="info-card tech-card">
+                            <div className="tech-card-head">
+                                <h2>{t('skills.stackTitle')}</h2>
                             </div>
-                            {/* 90% */}
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>React.js</h5>
-                            </div>
-                            {/* 95% */}
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>JavaScript</h5>
-                            </div>
-                            {/* 80% */}
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>UX/UI</h5>
-                            </div>
-                        </Carousel>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
-    </section>
-  )
+                            <Row className="skill-grid">
+                                {skills.map((skill, index) => (
+                                    <Col xs={12} sm={6} md={4} lg={3} key={index} data-aos="fade-up" data-aos-delay={(index % 6) * 70 + 220}>
+                                        <div className="skill-item">
+                                            <h4>{skill.name}</h4>
+                                            <div className="skill-bar">
+                                                <div className="skill-fill" style={{ width: skill.proficiency }}></div>
+                                            </div>
+                                            <span className="skill-percent">{skill.proficiency}</span>
+                                        </div>
+                                    </Col>
+                                ))}
+                            </Row>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </section>
+    )
 }
