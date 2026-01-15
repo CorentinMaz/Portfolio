@@ -563,18 +563,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .banner-new-layout {
   row-gap: 40px;
+  position: relative;
 }
 
 .banner-left {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 10;
 }
 
 .banner-right {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 5;
 }
 
 .hero-title-block {
@@ -628,7 +633,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .hero-image-container {
   position: relative;
-  width: 100%;
+  width: 75%;
   aspect-ratio: 3/4;
   overflow: hidden;
   border-radius: 16px;

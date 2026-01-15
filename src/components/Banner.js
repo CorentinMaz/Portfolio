@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { useLanguage } from "../i18n";
-import profileImg from "../assets/img/profile.png";
+import profileImg from "../assets/img/profile.jpg";
 
 export const Banner = () => {
 
@@ -23,11 +23,11 @@ export const Banner = () => {
               </a>
             </div>
           </Col>
-          {/* <Col xs={12} md={6} className="banner-right" data-aos="fade-left" data-aos-delay="200">
+          <Col xs={12} md={6} className="banner-right" data-aos="fade-left" data-aos-delay="200">
             <div className="hero-image-container">
               <img src={profileImg} alt="Corentin Mazabrard" className="hero-image" />
             </div>
-          </Col> */}
+          </Col>
         </Row>
       </Container>
     </section>
