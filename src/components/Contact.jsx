@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { EnvelopeFill } from "react-bootstrap-icons";
 import emailjs from '@emailjs/browser';
 import { useLanguage } from "../i18n";
 
@@ -59,7 +60,7 @@ export const Contact = () => {
                   <div className="contact-info">
                     <h3>{t('contact.directContact')}</h3>
                     <div className="contact-link">
-                      <img src={require("../assets/img/mail.png")} alt="mail" className="contact-icon" />
+                      <EnvelopeFill className="contact-icon" aria-label="mail" />
                       <a href="mailto:corentin.mazabrard@gmail.com">corentin.mazabrard@gmail.com</a>
                     </div>
                   </div>
